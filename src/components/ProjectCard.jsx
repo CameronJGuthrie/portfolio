@@ -9,7 +9,7 @@ import Row from './Row';
 
 const PreviewImage = styled.img`
   margin: 2 2 2 2;
-  border-radius: 12%;
+  border-radius: 6%;
   `
 
 const ProjectCard = (props) => {
@@ -28,21 +28,21 @@ const ProjectCard = (props) => {
       }} 
       elevation={2}>
       <Col style={{width: '100%', height: '100%'}}>
-        <Center style={{width:'100%', minHeight: '80%'}}>
-          <Link to='portfolioProject'>
+        <Center style={{width:'100%', minHeight: '84%'}}>
+          <Link to={props.project.link}>
           <PreviewImage 
             style={{
-              maxWidth: `${cardWidth * 0.95}px`,
-              maxHeight: `${cardHeight * 0.8}px`,
+              maxWidth: `90%`,
+              maxHeight: `${200}px`,
               marginTop: '5px',
             }}
             src={props.project.preview} 
             alt='project preview'/>
           </Link>
         </Center>
-        <Row style={{width:'90%', minHeight: '15%', margin: '0 auto 0 auto'}}>
-          <Typography variant='body1' style={{margin: 'auto auto 0 0', color: 'black'}}>{props.project.name}</Typography>
-          <Typography variant='body1' style={{margin: 'auto 0 0 auto', color: 'black'}}>{props.project.date}</Typography>
+        <Row style={{padding: '2px', width:'90%', minHeight: '10%', margin: '0 auto 0 auto', backgroundColor:'white', borderRadius:'3px'}}>
+          <Typography variant='body1' style={{margin: '0 auto 0 0', color: 'black'}}><b>{props.project.name}</b></Typography>
+          <Typography variant='body2' style={{margin: '0 0 0 auto', color: 'black'}}>{props.project.date}</Typography>
         </Row>
       </Col>
     </Paper>
